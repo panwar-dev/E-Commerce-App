@@ -40,21 +40,25 @@ function classNames(...classes) {
 
 export default function Product() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const location = useLocation(); // Provides the location object, it contains info. about the URL and is immutable.
+  const navigate = useNavigate(); // Returns a function to programmatically navigate to a URL.
 
   // To handle multiple filter functionality.
   const handleFilter = (value, sectionId) => {
-    const searchParams = new URLSearchParams(location.search);
-    let filterValue = searchParams.getAll(sectionId);
+    const searchParams = new URLSearchParams(location.search); // Provides functionality to read, modify URL's search paramter.
 
+    let filterValue = searchParams.getAll(sectionId); // Provides the query values in the URL.
+
+    // If-block triggered when a field is unselected, used to remove existing value.
     if (filterValue.length > 0 && filterValue[0].split(",").includes(value)) {
+      // If the current value exists in filterValue, remove it.
       filterValue = filterValue[0].split(",").filter((item) => item !== value);
 
       if (filterValue.length === 0) {
         searchParams.delete(sectionId);
       }
     } else {
+      // If current value is newly selected, add it to filterValue.
       filterValue.push(value);
     }
 
