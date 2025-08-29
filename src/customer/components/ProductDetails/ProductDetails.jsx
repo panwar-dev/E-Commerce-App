@@ -72,7 +72,7 @@ function classNames(...classes) {
 export default function ProductDetails() {
   return (
     <div className="bg-white lg:px-20">
-      <div className="pt-6">
+      <div className="pt-0">
         <nav aria-label="Breadcrumb">
           <ol
             role="list"
