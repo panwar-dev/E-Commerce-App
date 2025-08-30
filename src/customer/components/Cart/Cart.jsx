@@ -13,7 +13,7 @@ const Cart = () => {
 
         {/* Cart details */}
         <div className="px-5 sticky top-0 h-[100vh] mt-5 lg:mt-0">
-          <div className="border">
+          <div className="border p-5">
             {/* Heading */}
             <p className="uppercase font-bold opacity-60 pb-4">Price Details</p>
             <hr />
